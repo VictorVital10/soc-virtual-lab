@@ -15,7 +15,7 @@ A Google Cloud Platform (GCP) é a poderosa plataforma de serviços em nuvem da 
 
 ## Topologia da Arquitetura
 
-![Diagrama da arquitetura do laboratório SOC](../images/topologia.png)
+![Diagrama da arquitetura do laboratório SOC](../images/topologia/Topologia.png)
 
 *Figura 1 – Diagrama simplificado da arquitetura do laboratório SOC na GCP.*
 
@@ -27,7 +27,7 @@ A Google Cloud Platform (GCP) é a poderosa plataforma de serviços em nuvem da 
 - **Storage:** armazenamento persistente de logs, configurações e dados gerados pelos serviços.
 
 ## Instâncias (Máquinas Virtuais)
-![Máquinas Virtuais do laboratório SOC](../images/instancias.png)
+![Máquinas Virtuais do laboratório SOC](../images/gcp/InstanciasVms.png)
 
 *Figura 2 – Listagem das VMs utilizadas no laboratório SOC na GCP.*
 
@@ -50,7 +50,7 @@ Para garantir a segurança da infraestrutura na GCP, foram aplicadas as seguinte
 - Monitoramento inicial do tráfego e dos logs para detectar possíveis anomalias ou acessos suspeitos.
 
 ## Principais regras de firewall - GCP
-![Principais regras de firewall do projeto](../images/firewall.png)
+![Principais regras de firewall do projeto](../images/gcp/FirewallRules.png)
 
 *Figura 3 – Regras de firewall personalizadas essenciais para a comunicação entre as VMs .*
 
