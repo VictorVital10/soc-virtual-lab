@@ -1,5 +1,7 @@
 # Configuração dos Componentes do SOC LAB
 
+> Nesta etapa, irei apresentar de forma detalhada como foi realizada a configuração de cada um dos componentes do SOC Lab. O foco aqui é descrever os principais ajustes feitos no Wazuh Manager, o processo de registro dos agentes, as integrações com o IRIS e o Shuffle, além das configurações de firewall e das medidas de segurança aplicadas.
+
 #### 1 - Configuração Inicial do Wazuh Manager
 A configuração do Wazuh Manager foi o primeiro passo para estruturar a base de monitoramento do SOC Lab. Realizei os seguintes ajustes:
 - Ajuste de regras de alerta no arquivo 'ossec.conf'

@@ -32,5 +32,5 @@ A estrutura do projeto está dividida em etapas bem definidas para facilitar o e
 
 ---
 
-Este documento introdutório estabelece as bases para o desenvolvimento do laboratório SOC, destacando sua relevância e os benefícios proporcionados à formação prática em cibersegurança.
+Esta documentação estabelece as bases para o desenvolvimento de um laboratório SOC, destacando sua relevância e os benefícios proporcionados à formação prática em cibersegurança.
    

@@ -1,6 +1,6 @@
 ## Visão Geral
 
-Nesta etapa, vou descrever como eu realizei a instalação de todos os componentes do laboratório SOC, incluindo:
+> Nesta etapa, vou descrever como eu realizei a instalação de todos os componentes do laboratório SOC, incluindo:
 
 - O Wazuh Manager (SIEM)
 - Os dois agentes (um Linux e um Windows)
@@ -33,14 +33,15 @@ Os comandos que utilizei foram:
 ```bash
 curl -sO https://packages.wazuh.com/4.12/wazuh-install.sh && sudo bash ./wazuh-install.sh -a
 ```
-Depois de concluída a instalação, fiz algumas configurações no arquivo *ossec.conf* e, mais para frente, realizei as alterações necessárias para a integração com o IRIS e Shuffle.
+Depois de concluída a instalação, fiz algumas configurações iniciais no arquivo *ossec.conf* e, mais para frente, realizei as alterações necessárias para a integração com o IRIS e Shuffle.
 
 A partir de agora, temos acesso ao Dashboard web do Wazuh, garantindo que o Manager estivesse recebendo eventos e funcionando normalmente, para isso, basta copiar o IP da VM, colar na barra do navegador e fazer login com as credenciais que foram geradas pelo próprio Wazuh durante a instalação.
 
-## Página inicial do Wazuh
+#### Página inicial do Wazuh
+
 ![Página inicial do Wazuh](../images/wazuh/DashboardWazuh.png)
 
-*Figura 4 – Interface gráfica do Wazuh, acessada com o IP da VM diretamente na URL do navegador utilizando as credenciais geradas pelo Wazuh.*
+*Imagem 4 – Interface gráfica do Wazuh, acessada com o IP da VM diretamente na URL do navegador utilizando as credenciais geradas pelo Wazuh.*
 
 ## Instalação dos Agentes
 #### Agente Linux
@@ -91,8 +92,13 @@ Logo após isso, o IRIS já estava disponível via HTTPS na porta 443.
 
 No primeiro acesso, realizei o login com as credenciais padrão, mas recomendo fortemente alterar essa senha para reforçar a segurança.
 
-## Página inicial do IRIS 
+#### Página inicial do IRIS 
+
 ![Página inicial do IRIS](../images/iris/DashboardIris.png)
+
+*Imagem 5 - Interface gráfica do IRIS acessada com o IP da VM diretamente na URL do navegador.*
+
+---
 
 Nesse momento, é necessário fazer o cadastro de um novo cliente (customer) dentro da plataforma do IRIS.
 
