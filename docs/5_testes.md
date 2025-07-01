@@ -26,12 +26,12 @@ ping <IP-do-destino>
 
 ## Testes de Comunicação entre Agentes e Wazuh Manager
 
-Após validar a conectividade, o próximo passo foi confirmar a comunicação entre os agentes e o Wazuh Manager.
+Após validar a conectividade, o foco foi garantir que os agentes estavam enviando logs corretamente ao Wazuh Manager.
 
-### Testes realizados:
+### Itens verificados:
 
-- Verificação do status dos agentes no Dashboard do Wazuh.
-- Geração de eventos simples para confirmar a coleta de logs.
+- Status dos agentes no Dashboard do Wazuh;
+- Geração de eventos simples para validar o pipeline de logs.
 
 #### Exemplo de evento gerado no agente Linux:
 
@@ -40,9 +40,9 @@ sudo su
 ```
 
 <!-- Inserir imagem: wazuh_alert_privilege_escalation.png -->
-<!-- Imagem X - Alerta de escalonamento de privilégio gerado após execução docomando 'sudo su' no agente Linux -->
+<!-- Imagem X - Alerta de escalonamento de privilégio gerado após execução do comando 'sudo su' no agente Linux -->
 
-Esse comando simpes foi suficiente para gerar um evento de escalonamento de privilégio, o qual apareceu no Dashboard.
+Esse comando simples foi suficiente para gerar um evento de escalonamento de privilégio, o qual apareceu no Dashboard.
 
 #### Exemplo de evento gerado no agente Windows:
 
@@ -55,7 +55,7 @@ Esses eventos também apareceram como alertas no Wazuh.
 
 Para validar o pipeline de detecção e resposta, realizei alguns testes manuais de geração de alertas.
 
-#### Exemplo: Criação de arquivo suspeito no agente Linux
+#### Exemplo: Criação de arquivo suspeito em um diretório sensível
 
 ``` bash
 sudo touch /tmp/teste_alerta.txt
@@ -71,15 +71,15 @@ Na imagem é possível ver o alerta gerado no Wazuh com base nas regras pré-con
 
 Todos os eventos foram devidamente capturados e reportados ao Wazuh.
 
-## Testes de Integração: Wazuh - IRIS
+## Testes de Integração: Wazuh - IRIS (DFIR)
 
 Um dos testes mais importantes foi validar a integração entre o Wazuh e o IRIS, garantindo que os alertas gerados no SIEM fossem encaminhados corretamente para o IRIS para posterior análise e investigação forense.
 
 ### Procedimento realizado:
 
 #### 1 - Configuração de um Webhook no Wazuh:
-- Definição do IP do IRIS como destino.
-- Configurei o token de autenticação gerado na aba 'Access Control' do IRIS.
+- Inclusão do IP do IRIS como destino;
+- Adição do token de autenticação no cabeçalho.
 
 <!-- Inserir imagem: wazuh_webhook_conf.png -->
 <!-- Figura X - Configuração do Webhook no Wazuh para envio de alertas ao IRIS. -->
@@ -109,20 +109,35 @@ Para validar a comunicação entre o Wazuh e o Shuffle, configurei um fluxo bás
 
 ### Etapas:
 
-#### 1 - Configuração de um workflow de teste no Shuffle.
+#### 1 - Criação de um workflow de teste no Shuffle:
+ - Configurado para escutar alertas via Webhook e acionar uma automação simples (ex: log de evento ou notificação).
 
-#### 2 - Geração de um alerta no Wazuh (similar ao teste anterior).
+#### 2 - Geração de evento monitorado pelo Wazuh:
 
-#### 3 - Confirmação de que o Shuffle executou a automação desejada ao receber o alerta.
+- Uso de comando sudo no agente Linux;
+- Criação de arquivo suspeito no /tmp.
 
-Esse teste foi importante para validar a capacidade de resposta automatizada do ambiente.
+#### 3 - Validação do workflow:
+
+- O Shuffle recebeu corretamente o alerta JSON do Wazuh;
+- O workflow foi acionado e executou conforme o esperado.
+
+Esse teste comprovou que o ambiente possui capacidade de resposta automatizada a incidentes.
 
 <!-- as -->
 
 ## Considerações Finais sobre os Testes
 
-O processo de testes foi essencial para garantir que todos os componentes do SOC LAB estão funcionando de forma intergada.
+Os testes realizados confirmaram que:
 
-Além de validar as comunicações e os fluxos de alertas, esse exercício me permitiu entender melhor os pontos de integração e a importância de um bom monitoramento entre os diferentes sistemas.
+- Os agentes estão se comunicando corretamente com o Wazuh;
 
-Os próximos passos envolerão documentar os resultados finais e as lições aprendidas nesse projeto.
+- Alertas estão sendo gerados com base em eventos reais e personalizados;
+
+- O SIEM está processando e roteando corretamente os alertas para o IRIS e o Shuffle;
+
+- As integrações entre os componentes estão funcionais e seguras.
+
+Essa etapa foi essencial para validar a arquitetura e refinar a integração entre os sistemas. Além disso, ajudou a consolidar o entendimento prático sobre os fluxos de detecção, correlação e resposta em um SOC realista.
+
+Os próximos passos envolvem a documentação dos resultados finais e a consolidação de aprendizados técnicos no projeto.

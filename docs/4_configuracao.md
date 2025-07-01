@@ -38,7 +38,22 @@ Para integrar o SIEM Wazuh com a ferramenta DFIR IRIS, seguimos o processo clás
 - Ajuste do nível mínimo de alerta para disparo
 - Teste de integração (exemplo: uso de 'curl' ou execução de comando sudo em um agente)
 
-#### 4 - Configuração de regras de Firewall (GCP)
+#### 4 - Integração Wazuh - Shuffle (SOAR)
+
+A comunicação entre o Wazuh e o Shuffle foi feita também via Webhook, permitindo que alertas gerados no Wazuh fossem recebidos no Shuffle para orquestração de respostas automatizadas:
+
+- Configuração de um endpoint de Webhook no Shuffle
+
+- Criação de workflows de resposta baseados em eventos (por exemplo, alertas de brute-force ou uso de sudo)
+
+- Envio de alertas JSON via integração Webhook do Wazuh apontando para o Shuffle
+
+- Validação com playbooks simples (como notificações e marcação de eventos)
+
+Essa integração foi essencial para automatizar ações a partir dos alertas detectados pelo SIEM.
+
+
+#### 5 - Configuração de regras de Firewall (GCP)
 Garantir o controle de tráfego entre as VMs foi fundamental para a segurança e o funcionamento correto do SOC Lab. As regras de firewall foram configuradas diretamente na Google Cloud Platform (GCP), com foco no princípio do menor privilégio (permitir apenas o necessário), algumas das principais regras criadas foram:
 - Porta 1514 | TCP/UDP | Wazuh Manager (OSSEC) | Recebe dados dos agentes
 - Porta 55000 | TCP | Wazuh Agent | Comunicação com os agentes

@@ -13,7 +13,7 @@ A Google Cloud Platform (GCP) é a poderosa plataforma de serviços em nuvem da 
 - **Escalabilidade:** Permite o ajuste dinâmico de recursos conforme a demanda, permitindo simular os mais diversos cenários e ambientes.
 - **Segurança:** Disponibiliza ferramentas nativas para controle de acesso, monitoramento contínuo e proteção da infraestrutura. 
 
-#### Topologia da Arquitetura
+#### Diagrama do Projeto
 
 ![Diagrama da arquitetura do laboratório SOC](../images/topologia/Topologia.png)
 
