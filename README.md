@@ -53,7 +53,7 @@ Simular um ambiente de **Segurança Operacional completo**, com foco na **detec�
 
 ## 📸 Imagens do Projeto
 
-Veja imagens do ambiente, alertas e dashboards na pasta `/docs` deste repositório.
+Veja imagens do ambiente, alertas e dashboards na pasta `/images` deste repositório.
 
 ---
 

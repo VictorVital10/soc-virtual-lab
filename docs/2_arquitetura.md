@@ -13,7 +13,7 @@ A Google Cloud Platform (GCP) é a poderosa plataforma de serviços em nuvem da 
 - **Escalabilidade:** Permite o ajuste dinâmico de recursos conforme a demanda, permitindo simular os mais diversos cenários e ambientes.
 - **Segurança:** Disponibiliza ferramentas nativas para controle de acesso, monitoramento contínuo e proteção da infraestrutura. 
 
-#### Diagrama do Projeto
+### Diagrama do Projeto
 
 ![Diagrama da arquitetura do laboratório SOC](../images/topologia/Topologia.png)
 
@@ -26,7 +26,7 @@ A Google Cloud Platform (GCP) é a poderosa plataforma de serviços em nuvem da 
 - **Firewalls:** regras aplicadas para proteger as VMs, limitando o acesso às portas essenciais e prevenindo tráfego não autorizado.
 - **Storage:** armazenamento persistente de logs, configurações e dados gerados pelos serviços.
 
-#### Instâncias (Máquinas Virtuais)
+### Instâncias (Máquinas Virtuais)
 
 ![Máquinas Virtuais do laboratório SOC](../images/gcp/InstanciasVms.png)
 
@@ -50,9 +50,9 @@ Para garantir a segurança da infraestrutura na GCP, foram aplicadas as seguinte
 - Utilização de contas e permissões baseadas em papéis (IAM), limitando os privilégios de cada recurso.
 - Monitoramento inicial do tráfego e dos logs para detectar possíveis anomalias ou acessos suspeitos.
 
-#### Principais Regras de Firewall
+### Principais Regras de Firewall
 
-![Principais regras de firewall do projeto](../images/gcp/FirewallRules.png)
+![Principais regras de firewall do projeto](../images/gcp/FirewallRules1.png)
 
 *Imagem 3 – Regras de firewall personalizadas essenciais para a comunicação entre as VMs .*
 

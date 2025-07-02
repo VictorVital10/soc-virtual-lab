@@ -16,13 +16,9 @@ Realizei os seguintes procedimentos:
 - Teste de acesso remoto via **SSH** (para instâncias Linux) e **RDP** (para a instância Windows).
 - Validação de acesso às interfaces web (Wazuh Dashboard, IRIS e Shuffle).
 
-**Exemplo de comando de testes de ping:**
-
-``` bash
-ping <IP-do-destino>
-```
+### Resultado esperado de testes de ping:
 <!-- Inserir imagem: ping_test.png -->
-<!-- Imagem X - Teste de conectividade entre as VMs usando o comando ping. -->
+<!-- Img 12 - Teste de conectividade entre as VMs usando o comando ping. -->
 
 ## Testes de Comunicação entre Agentes e Wazuh Manager
 
@@ -38,11 +34,10 @@ Após validar a conectividade, o foco foi garantir que os agentes estavam envian
 ``` bash
 sudo su
 ```
+Esse comando simples foi suficiente para gerar um evento de escalonamento de privilégio, o qual apareceu no Dashboard.
 
 <!-- Inserir imagem: wazuh_alert_privilege_escalation.png -->
-<!-- Imagem X - Alerta de escalonamento de privilégio gerado após execução do comando 'sudo su' no agente Linux -->
-
-Esse comando simples foi suficiente para gerar um evento de escalonamento de privilégio, o qual apareceu no Dashboard.
+<!-- Img 13 - Alerta de escalonamento de privilégio gerado após execução do comando 'sudo su' no agente Linux -->
 
 #### Exemplo de evento gerado no agente Windows:
 
@@ -61,7 +56,7 @@ Para validar o pipeline de detecção e resposta, realizei alguns testes manuais
 sudo touch /tmp/teste_alerta.txt
 ```
 <!-- Inserir imagem: wazuh_alert_file_creation.png -->
-<!-- Figura X - Alerta gerado no Wazuh após a criação de um arquivo suspeito no agente Linux. -->
+<!-- Img 14 - Alerta gerado no Wazuh após a criação de um arquivo suspeito no agente Linux. -->
 
 Na imagem é possível ver o alerta gerado no Wazuh com base nas regras pré-configuradas.
 
@@ -82,7 +77,7 @@ Um dos testes mais importantes foi validar a integração entre o Wazuh e o IRIS
 - Adição do token de autenticação no cabeçalho.
 
 <!-- Inserir imagem: wazuh_webhook_conf.png -->
-<!-- Figura X - Configuração do Webhook no Wazuh para envio de alertas ao IRIS. -->
+<!-- Img 15 -- Configuração do Webhook no Wazuh para envio de alertas ao IRIS. -->
 
 #### 2 - Geração de um alerta manual no Wazuh para teste:
 ``` bash
@@ -101,7 +96,7 @@ curl -vk -X POST https://<IP-do-IRIS>/alerts/add \
 - Confirmação de que o alerta foi recebido e criado como um novo caso.
 
 <!-- Inserir imagem: iris_alert_received.png -->
-<!-- Figura X - Visualização do alerta recebido na interface do IRIS, já registrado como novo caso para investigação. -->
+<!-- Img 16 - Visualização do alerta recebido na interface do IRIS, já registrado como novo caso para investigação. -->
 
 ## Testes de Integração: Wazuh - Shuffle (SOAR)
 
@@ -124,7 +119,7 @@ Para validar a comunicação entre o Wazuh e o Shuffle, configurei um fluxo bás
 
 Esse teste comprovou que o ambiente possui capacidade de resposta automatizada a incidentes.
 
-<!-- as -->
+<!-- Img 17 -->
 
 ## Considerações Finais sobre os Testes
 

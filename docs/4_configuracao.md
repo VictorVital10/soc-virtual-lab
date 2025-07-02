@@ -5,12 +5,14 @@
 #### 1 - Configuração Inicial do Wazuh Manager
 A configuração do Wazuh Manager foi o primeiro passo para estruturar a base de monitoramento do SOC Lab. Realizei os seguintes ajustes:
 - Ajuste de regras de alerta no arquivo 'ossec.conf'
-- Definição de níveis mínimos de alerta, exemplo:
-``` bash 
-<alerts>
-  <log_alert_level>3</log_alert_level>
-</alerts>
-```
+- Definição de níveis mínimos de alerta, como na imagem abaixo:
+
+### Tag *Alerts* configurada com o level 3
+
+ ![Imagem da tag ALERTS configurada com o nível 3](../images/wazuh/Alert_Level.png)
+
+*Imagem 7 – Trecho do arquivo ossec.conf com a tag alerts configurada com o level 3.*
+
 - Criação de regras customizadas (Opcional)
 - Configuração de saída JSON para integrações
 - Habilitação de módulos específicos (se aplicável)
@@ -21,6 +23,12 @@ Garantir a comunicação segura entre Wazuh Manager e os Agentes (Linux e Window
 - Geração e importação das chaves de registro
 - Ajustes feitos nos agentes para apontar para o IP do Manager, garantindo que os logs fossem enviados corretamente
 - Validação da comunicação
+
+### Dashboard do Wazuh com os Agentes
+
+![Imagem do wazuh dashboard mostrando os agentes ativos e conectados](../images/wazuh/ConnectedAgents.png)
+
+*Imagem 8 – Wazuh Dashboard mostrando os dois agentes ativos e conectados.*
 
 #### 3 - Integração Wazuh - IRIS
 Para integrar o SIEM Wazuh com a ferramenta DFIR IRIS, seguimos o processo clássico de integração via Webhook e autenticaçãp por token.
@@ -38,8 +46,13 @@ Para integrar o SIEM Wazuh com a ferramenta DFIR IRIS, seguimos o processo clás
 - Ajuste do nível mínimo de alerta para disparo
 - Teste de integração (exemplo: uso de 'curl' ou execução de comando sudo em um agente)
 
-#### 4 - Integração Wazuh - Shuffle (SOAR)
+### Aba *Access Control* com Token gerado no IRIS
 
+![Token Gerado no IRIS](../images/iris/IrisToken.png)
+
+*Imagem 9 – Ilustração do Token gerado na interface do IRIS, posteriormente usado na integração com o Wazuh.*
+
+#### 4 - Integração Wazuh - Shuffle (SOAR)
 A comunicação entre o Wazuh e o Shuffle foi feita também via Webhook, permitindo que alertas gerados no Wazuh fossem recebidos no Shuffle para orquestração de respostas automatizadas:
 
 - Configuração de um endpoint de Webhook no Shuffle
@@ -50,11 +63,24 @@ A comunicação entre o Wazuh e o Shuffle foi feita também via Webhook, permiti
 
 - Validação com playbooks simples (como notificações e marcação de eventos)
 
+### Workflow no Shuffle
+![Workflow criado no Shuffle](../images/shuffle/Shuffle1.png)
+
+*Imagem 10 – Workflow criado no Shuffle.*
+
 Essa integração foi essencial para automatizar ações a partir dos alertas detectados pelo SIEM.
 
 
 #### 5 - Configuração de regras de Firewall (GCP)
-Garantir o controle de tráfego entre as VMs foi fundamental para a segurança e o funcionamento correto do SOC Lab. As regras de firewall foram configuradas diretamente na Google Cloud Platform (GCP), com foco no princípio do menor privilégio (permitir apenas o necessário), algumas das principais regras criadas foram:
+Garantir o controle de tráfego entre as VMs foi fundamental para a segurança e o funcionamento correto do SOC Lab. As regras de firewall foram configuradas diretamente na Google Cloud Platform (GCP), com foco no princípio do menor privilégio (permitir apenas o necessário)
+
+### Regras de Firewall criadas na GCP
+
+![Regras de firewall](../images/gcp/FirewallRules2.png)
+
+*Imagem 11 – Todas as regras de firewall que precisam ser configuradas para comunicação entre as instâncias.*
+
+ Algumas regras de firewall que são essenciais para o funcionamento do projeto:
 - Porta 1514 | TCP/UDP | Wazuh Manager (OSSEC) | Recebe dados dos agentes
 - Porta 55000 | TCP | Wazuh Agent | Comunicação com os agentes
 - Porta 443 | TCP | IRIS | Interface web segura (HTTPS)
@@ -68,7 +94,7 @@ Seguindo as boas práticas tradicionais de segurança, adotei as seguintes medid
 - Regras de firewall que permitem acesso somente a partir de IPs específicos da rede de administração, minimizando a exposição dos serviços na internet pública.
 
 #### 6 - Exemplos de Arquivos de Configuração
-Trechos relevantes do 'ossec.conf':
+Trechos relevantes do arquivo 'ossec.conf':
 
 ``` bash
 <ossec_conf>

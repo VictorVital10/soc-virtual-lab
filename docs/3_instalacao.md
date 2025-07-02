@@ -139,7 +139,7 @@ No primeiro acesso:
 
 ### Página inicial do Shuffle
 
-![Página inicial do SHUFFLE](../images/shuffle/Shuffle3.png)
+![Página inicial do SHUFFLE](../images/shuffle/ShuffleDashboard.png)
 
 *Imagem 6 - Interface gráfica do Shuffle acessada pela porta 3001 na URL do navegador.*
 
