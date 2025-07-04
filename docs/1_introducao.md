@@ -4,7 +4,7 @@
 
 ## Contextualização
 
-Com o crescimento exponencial das ameaças cibernéticas e a crescente demanda por profissionais capacitados em segurança da informação, a criação de laboratórios práticos tornou-se uma ferramenta essencial para o desenvolvimento técnico e estratégico dos futuros analistas de cibersegurança. Um ambiente de laboratório simula cenários reais, permitindo o estudo de ferramentas, técnicas e processos usados em ambientes corporativos sem os riscos associados a ambientes de produção.
+A criação de laboratórios práticos tornou-se uma ferramenta essencial para o desenvolvimento técnico e estratégico dos profissionais de cibersegurança. Um ambiente de laboratório simula cenários reais, permitindo o estudo de ferramentas, técnicas e processos usados em ambientes corporativos sem os riscos associados a ambientes de produção
 
 ## Objetivo do Laboratório
 

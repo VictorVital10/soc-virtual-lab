@@ -38,13 +38,13 @@ curl -sO https://packages.wazuh.com/4.12/wazuh-install.sh && sudo bash ./wazuh-i
 
 Depois de concluída a instalação, fiz algumas configurações iniciais no arquivo *ossec.conf* e, mais para frente, realizei as alterações necessárias para a integração com o IRIS e Shuffle.
 
-A partir de agora, temos acesso ao Dashboard web do Wazuh, garantindo que o Manager estivesse recebendo eventos e funcionando normalmente, para isso, basta copiar o IP da VM, colar na barra do navegador e fazer login com as credenciais que foram geradas pelo próprio Wazuh durante a instalação.
-
 ### Página inicial do Wazuh
 
 ![Página inicial do Wazuh](../images/wazuh/DashboardWazuh.png)
 
 *Imagem 4 – Interface gráfica do Wazuh, acessada com o IP da VM diretamente na URL do navegador utilizando as credenciais geradas pelo Wazuh.*
+
+A partir de agora, temos acesso ao Dashboard web do Wazuh, garantindo que o Manager estivesse recebendo eventos e funcionando normalmente, para isso, basta copiar o IP da VM, colar na barra do navegador e fazer login com as credenciais que foram geradas pelo próprio Wazuh durante a instalação.
 
 ## Instalação dos Agentes
 #### Agente Linux

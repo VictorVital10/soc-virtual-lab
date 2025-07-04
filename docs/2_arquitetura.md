@@ -2,6 +2,12 @@
 
 >Visão geral da infraestrutura e dos componentes que compõem o projeto.
 
+### Diagrama do Projeto
+
+![Diagrama da arquitetura do laboratório SOC](../images/topologia/Topologia.png)
+
+*Imagem 1 – Diagrama simplificado da arquitetura do laboratório SOC na GCP.*
+
 ## Google Cloud Platform (GCP)
 
 A Google Cloud Platform (GCP) é a poderosa plataforma de serviços em nuvem da Google, que oferece infraestrutura escalável, flexível, segura e de fácil acesso para o desenvolvimento, implantação e gerenciamento de aplicações e serviços. A escolha da GCP para este laboratório se deu principalmente pela praticidade e acessibilidade que a plataforma oferece. A GCP disponibiliza um crédito de aproximadamente U$300 para novos usuários, válidos por 90 dias, permitindo a experimentação de diversos serviços sem custos.
@@ -10,14 +16,7 @@ A Google Cloud Platform (GCP) é a poderosa plataforma de serviços em nuvem da 
 
 - **Acessibilidade:** Como havia citado, a GCP se destaca como uma excelente escolha para quem deseja desenvolver projetos como esse, especialmente pela acessibilidade que oferece. A plataforma possuí uma política bastante generosa com novos usuários, oferecendo créditos gratuitos que podem ser utilizados por até 90 dias, o que permite explorar diversos serviços sem custos, sendo ideal para quem deseja aprender, testar e construir projetos práticos.
 - **Flexibilidade:** Oferece uma ampla gama de serviços gerenciados que facilitam a criação, personalização e manutenção do ambiente.
-- **Escalabilidade:** Permite o ajuste dinâmico de recursos conforme a demanda, permitindo simular os mais diversos cenários e ambientes.
 - **Segurança:** Disponibiliza ferramentas nativas para controle de acesso, monitoramento contínuo e proteção da infraestrutura. 
-
-### Diagrama do Projeto
-
-![Diagrama da arquitetura do laboratório SOC](../images/topologia/Topologia.png)
-
-*Imagem 1 – Diagrama simplificado da arquitetura do laboratório SOC na GCP.*
 
 ## Infraestrutura usada
 
