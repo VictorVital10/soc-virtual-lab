@@ -28,7 +28,7 @@ A Google Cloud Platform (GCP) é a poderosa plataforma de serviços em nuvem da 
 
 ### Instâncias (Máquinas Virtuais)
 
-![Máquinas Virtuais do laboratório SOC](../images/gcp/InstanciasVms.png)
+![Máquinas Virtuais do laboratório SOC](../images/gcp/InstanciasVms1.png)
 
 *Imagem 2 – Listagem das VMs utilizadas no laboratório SOC na GCP.*
 
@@ -52,7 +52,7 @@ Para garantir a segurança da infraestrutura na GCP, foram aplicadas as seguinte
 
 ### Principais Regras de Firewall
 
-![Principais regras de firewall do projeto](../images/gcp/FirewallRules1.png)
+![Principais regras de firewall do projeto](../images/gcp/FirewallRules2.png)
 
 *Imagem 3 – Regras de firewall personalizadas essenciais para a comunicação entre as VMs .*
 

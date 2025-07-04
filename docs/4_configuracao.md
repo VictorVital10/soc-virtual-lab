@@ -5,6 +5,9 @@
 #### 1 - Configuração Inicial do Wazuh Manager
 A configuração do Wazuh Manager foi o primeiro passo para estruturar a base de monitoramento do SOC Lab. Realizei os seguintes ajustes:
 - Ajuste de regras de alerta no arquivo 'ossec.conf'
+- Criação de regras customizadas (Opcional)
+- Configuração de saída JSON para integrações
+- Habilitação de módulos específicos (se aplicável)
 - Definição de níveis mínimos de alerta, como na imagem abaixo:
 
 ### Tag *Alerts* configurada com o level 3
@@ -13,9 +16,6 @@ A configuração do Wazuh Manager foi o primeiro passo para estruturar a base de
 
 *Imagem 7 – Trecho do arquivo ossec.conf com a tag alerts configurada com o level 3.*
 
-- Criação de regras customizadas (Opcional)
-- Configuração de saída JSON para integrações
-- Habilitação de módulos específicos (se aplicável)
 
 #### 2 - Registro e Autorização de Agentes
 Garantir a comunicação segura entre Wazuh Manager e os Agentes (Linux e Windows) é uma etapa crucial.

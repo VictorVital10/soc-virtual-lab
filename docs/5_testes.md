@@ -17,8 +17,9 @@ Realizei os seguintes procedimentos:
 - Validação de acesso às interfaces web (Wazuh Dashboard, IRIS e Shuffle).
 
 ### Resultado esperado de testes de ping:
-<!-- Inserir imagem: ping_test.png -->
-<!-- Img 12 - Teste de conectividade entre as VMs usando o comando ping. -->
+![Output do comando ping entre as VMs](../images/wazuh/PingOutput.png)
+
+*Imagem 12 - Terminal com o output do comando PING entre Wazuh e IRIS.* 
 
 ## Testes de Comunicação entre Agentes e Wazuh Manager
 
@@ -36,8 +37,11 @@ sudo su
 ```
 Esse comando simples foi suficiente para gerar um evento de escalonamento de privilégio, o qual apareceu no Dashboard.
 
-<!-- Inserir imagem: wazuh_alert_privilege_escalation.png -->
-<!-- Img 13 - Alerta de escalonamento de privilégio gerado após execução do comando 'sudo su' no agente Linux -->
+### Alerta gerado após a execução do comando *SUDO*
+
+![Resultado do alerta gerado após o comando SUDO](../images/wazuh/SudoAlert.png)
+
+*Imagem 13 - Resultado do alerta gerado após a execução do comando SUDO.*
 
 #### Exemplo de evento gerado no agente Windows:
 
@@ -55,8 +59,12 @@ Para validar o pipeline de detecção e resposta, realizei alguns testes manuais
 ``` bash
 sudo touch /tmp/teste_alerta.txt
 ```
-<!-- Inserir imagem: wazuh_alert_file_creation.png -->
-<!-- Img 14 - Alerta gerado no Wazuh após a criação de um arquivo suspeito no agente Linux. -->
+
+### Alerta gerado após a criação de um arquivo suspeito
+
+![Alerta gerado](../images/wazuh/MaliciousFileAlert.png)
+
+*Imagem 14 - Resultado do alerta gerado após a criação de um arquivo suspeito.*
 
 Na imagem é possível ver o alerta gerado no Wazuh com base nas regras pré-configuradas.
 
@@ -76,27 +84,41 @@ Um dos testes mais importantes foi validar a integração entre o Wazuh e o IRIS
 - Inclusão do IP do IRIS como destino;
 - Adição do token de autenticação no cabeçalho.
 
-<!-- Inserir imagem: wazuh_webhook_conf.png -->
-<!-- Img 15 -- Configuração do Webhook no Wazuh para envio de alertas ao IRIS. -->
+### Integração do IRIS no arquivo *ossec.conf*
+
+![Trecho do arquivo ossec.conf com a integração do IRIS](../images/wazuh/IrisIntegration.png)
+
+*Imagem 15 – Trecho do arquivo ossec.conf com a integração do IRIS.*
 
 #### 2 - Geração de um alerta manual no Wazuh para teste:
 ``` bash
-curl -vk -X POST https://<IP-do-IRIS>/alerts/add \
--H "Content-Type: application/json" \
--H "Authorization: Bearer <seu_token_IRIS>" \
--d '{
-    "title": "Teste de Integração Wazuh -> IRIS",
-    "description": "Este é um alerta de teste gerado manualmente via curl para validar a integração.",
-    "source": "Wazuh",
-    "severity": "3"
-}'
+curl -k -X POST https://<IP>/alerts/add \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer <TOKEN>" \
+  -d '{
+       "alert_title": "Test Alert",
+       "alert_description": "This is a test alert from curl",
+       "alert_source": "Wazuh",
+       "alert_source_ref": "TEST123",
+       "alert_source_link": "https://<IP>/app/wz-home",
+       "alert_severity_id": 3,
+       "alert_status_id": 2,
+       "alert_source_event_time": "2023-11-01T12:00:00Z",
+       "alert_note": "",
+       "alert_tags": "wazuh,test-agent",
+       "alert_customer_id": 2
+  }'
+
 ```
 
 #### 3 - Verificação na interface do IRIS:
 - Confirmação de que o alerta foi recebido e criado como um novo caso.
 
-<!-- Inserir imagem: iris_alert_received.png -->
-<!-- Img 16 - Visualização do alerta recebido na interface do IRIS, já registrado como novo caso para investigação. -->
+### Alerta recebido no IRIS
+
+![Alerta recebido no IRIS](../images/iris/IrisAlert.png)
+
+*Imagem 16 – Alerta gerado no IRIS após a execução do comando acima.*
 
 ## Testes de Integração: Wazuh - Shuffle (SOAR)
 
@@ -119,7 +141,11 @@ Para validar a comunicação entre o Wazuh e o Shuffle, configurei um fluxo bás
 
 Esse teste comprovou que o ambiente possui capacidade de resposta automatizada a incidentes.
 
-<!-- Img 17 -->
+### Alerta gerado no Shuffle
+
+![Alerta gerado no Shuffle](../images/shuffle/ShuffleAlert.png)
+
+*Imagem 17 – Alerta gerado no Shuffle após a execução criação de um arquivo malicioso.*
 
 ## Considerações Finais sobre os Testes
 

@@ -86,7 +86,3 @@ Veja imagens do ambiente, alertas e dashboards na pasta `/images` deste reposit�
 📌 LinkedIn: [https://www.linkedin.com/in/victor-vital-6b6761275/](https://www.linkedin.com/in/victor-vital-6b6761275/)
 
 ---
-
-## 📜 Licença
-
-Este projeto é livre para fins educacionais. Sinta-se à vontade para clonar, estudar e adaptar ao seu próprio laboratório.
