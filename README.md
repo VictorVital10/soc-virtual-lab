@@ -75,7 +75,7 @@ Veja imagens do ambiente, alertas e dashboards na pasta `/images` deste reposit�
 
 ## 📎 Link para o Post no LinkedIn
 
-👉 [Acessar publicação](https://www.linkedin.com/in/seu-perfil-exemplo) 
+👉 [Acessar publicação](https://www.linkedin.com/posts/victor-vital-6b6761275_cybersecurity-soc-siem-activity-7347871860333731840-f7eT?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEM1lKoBv3gszYVOuOOwGOKW-vot0D0Jw-U) 
 
 ---
 
